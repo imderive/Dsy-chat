@@ -95,22 +95,6 @@ defineExpose({
         />
       </div>
 
-      <!-- Proxy URL -->
-      <div class="setting-item">
-        <div class="setting-label-row">
-          <div class="label-with-tooltip">
-            <span>代理地址</span>
-            <el-tooltip content="用于解决浏览器调用 API 的跨域拦截问题，留空则直连 SiliconFlow" placement="top">
-              <el-icon><QuestionFilled /></el-icon>
-            </el-tooltip>
-          </div>
-        </div>
-        <el-input
-          v-model="settingStore.settings.proxyUrl"
-          placeholder="例如: https://llm-chat-proxy.你的用户名.workers.dev"
-        />
-      </div>
-
       <!-- Max Tokens -->
       <div class="setting-item">
         <div class="setting-label">
