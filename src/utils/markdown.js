@@ -2,12 +2,8 @@ import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import mdLinkAttributes from 'markdown-it-link-attributes'
 import { full as emoji } from 'markdown-it-emoji'
-// import 'highlight.js/styles/github.css'
-// 使用 atom-one-dark 主题
-import 'highlight.js/styles/atom-one-dark.css'
+import 'highlight.js/styles/github.css'
 import copyIcon from '@/assets/photo/复制.png'
-import darkIcon from '@/assets/photo/暗黑模式.png'
-import lightIcon from '@/assets/photo/明亮模式.png'
 
 // 创建 markdown-it 实例
 const md = new MarkdownIt({
@@ -18,7 +14,7 @@ const md = new MarkdownIt({
     if (lang && hljs.getLanguage(lang)) {
       try {
         const highlighted = hljs.highlight(str, { language: lang, ignoreIllegals: true }).value
-        return `<div class="code-block"><div class="code-header"><span class="code-lang">${lang}</span><div class="code-actions"><button class="code-action-btn" data-action="copy" data-tooltip="复制"><img src="${copyIcon}" alt="copy" /></button><button class="code-action-btn" data-action="theme" data-tooltip="切换主题"><img src="${darkIcon}" alt="theme" data-light-icon="${lightIcon}" data-dark-icon="${darkIcon}" /></button></div></div><pre class="hljs"><code>${highlighted}</code></pre></div>`
+        return `<div class="code-block"><div class="code-header"><span class="code-lang">${lang}</span><div class="code-actions"><button class="code-action-btn" data-action="copy" data-tooltip="复制"><img src="${copyIcon}" alt="copy" /></button></div></div><pre class="hljs"><code>${highlighted}</code></pre></div>`
         // eslint-disable-next-line no-unused-vars, no-empty
       } catch (__) {}
     }

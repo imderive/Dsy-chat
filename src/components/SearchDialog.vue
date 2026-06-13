@@ -190,119 +190,126 @@ const handleRegenerate = async () => {
 
 <style lang="scss" scoped>
 .search-dialog {
-  max-width: 640px; // 设置最大宽度
-  min-width: 320px; // 设置最小宽度
-  max-height: 600px;
+  max-width: 640px;
+  min-width: 320px;
+  max-height: 560px;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  display: flex; // 使用弹性布局
-  flex-direction: column; // 垂直排列
+  display: flex;
+  flex-direction: column;
 
   .search-header {
-    flex-shrink: 0; // 防止头部压缩
-    padding: 12px;
-    border-bottom: 1px solid #eaeaea;
+    flex-shrink: 0;
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
     .search-input {
       width: 100%;
-      height: 40px;
-      padding: 0 12px;
+      height: 44px;
+      padding: 0 16px;
       display: flex;
       align-items: center;
       position: relative;
+      background: #f7f7f7;
+      border-radius: 10px;
 
       input {
-        flex: 1; // 输入框占据剩余空间
+        flex: 1;
         height: 100%;
         border: none;
         outline: none;
         background: none;
-        font-size: 1rem;
-        color: #000;
-        padding-right: 40px;
+        font-size: 15px;
+        color: #1a1a1a;
+        padding-right: 36px;
 
         &::placeholder {
-          color: #999;
+          color: #bbb;
         }
       }
 
       .action-btn {
         position: absolute;
-        right: 8px;
+        right: 6px;
         top: 50%;
         transform: translateY(-50%);
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
         border: none;
-        background: none;
+        background: #3f7af1;
         padding: 0;
         cursor: pointer;
-        border-radius: 6px;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: background-color 0.3s;
+        transition: background 0.2s;
 
         img {
-          width: 16px;
-          height: 16px;
+          width: 14px;
+          height: 14px;
+          filter: brightness(0) invert(1);
         }
 
         &:hover {
-          background-color: rgba(0, 0, 0, 0.05);
+          background: #2563eb;
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
         }
       }
     }
   }
 
   .dialog-content {
-    flex: 1; // 对话内容区域占据剩余空间
-    padding: 12px;
-    overflow-y: auto; // 允许垂直滚动
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
 
     .initial-message {
-      padding: 12px 12px;
-      color: #000;
+      padding: 8px 4px;
+      color: #444;
       font-size: 14px;
-      line-height: 1.5;
-      display: flex;
-      align-items: center;
+      line-height: 1.6;
     }
 
     .suggested-prompts {
-      margin-top: 24px;
+      margin-top: 8px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
 
       .prompt-title {
-        padding-left: 12px;
+        padding-left: 4px;
         font-size: 12px;
-        color: #666;
+        color: #aaa;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
       }
 
       .prompt-list {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 2px;
 
         .prompt-item {
           text-align: left;
-          padding: 8px 12px;
+          padding: 10px 12px;
           background: none;
           border: none;
-          border-radius: 6px;
+          border-radius: 8px;
           font-size: 14px;
-          color: #000;
+          color: #444;
           cursor: pointer;
-          transition: background-color 0.2s;
-          display: flex;
-          align-items: center;
+          transition: background-color 0.15s;
 
           &:hover {
             background-color: #f5f5f5;

@@ -87,50 +87,18 @@ const handleCodeCopy = async (event) => {
   }
 }
 
-// 处理代码块主题切换
-const handleThemeToggle = (event) => {
-  // 确保我们获取到正确的元素
-  const codeBlock = event.target.closest('.code-block')
-  // 修改获取图标元素的方式
-  const themeBtn = event.target.closest('[data-action="theme"]')
-  const themeIcon = themeBtn.querySelector('img')
-  const lightIcon = themeIcon.dataset.lightIcon
-  const darkIcon = themeIcon.dataset.darkIcon
-
-  // 添加调试日志
-  // console.log('切换主题', {
-  //   codeBlock,
-  //   themeIcon,
-  //   lightIcon,
-  //   darkIcon,
-  //   isDark: codeBlock.classList.contains('dark-theme'),
-  // })
-
-  codeBlock.classList.toggle('dark-theme')
-
-  // 切换图标
-  themeIcon.src = codeBlock.classList.contains('dark-theme') ? lightIcon : darkIcon
-}
-
-// 修改事件监听的方式
+// 使用 MutationObserver 监听代码块，为复制按钮绑定事件
 onMounted(() => {
-  // 使用 MutationObserver 来监听 DOM 变化
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (mutation.addedNodes.length) {
         const codeBlocks = document.querySelectorAll('.code-block')
         codeBlocks.forEach((block) => {
           const copyBtn = block.querySelector('[data-action="copy"]')
-          const themeBtn = block.querySelector('[data-action="theme"]')
 
           if (copyBtn && !copyBtn._hasListener) {
             copyBtn.addEventListener('click', handleCodeCopy)
             copyBtn._hasListener = true
-          }
-          if (themeBtn && !themeBtn._hasListener) {
-            themeBtn.addEventListener('click', handleThemeToggle)
-            themeBtn._hasListener = true
-            // console.log('添加主题切换监听器', { block, themeBtn })
           }
         })
       }
@@ -149,10 +117,7 @@ onMounted(() => {
     const codeBlocks = document.querySelectorAll('.code-block')
     codeBlocks.forEach((block) => {
       const copyBtn = block.querySelector('[data-action="copy"]')
-      const themeBtn = block.querySelector('[data-action="theme"]')
-
       copyBtn?.removeEventListener('click', handleCodeCopy)
-      themeBtn?.removeEventListener('click', handleThemeToggle)
     })
   })
 })

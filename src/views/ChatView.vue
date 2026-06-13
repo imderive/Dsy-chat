@@ -171,7 +171,13 @@ const handleBack = async () => {
       </template>
       <div v-else class="empty-state">
         <div class="empty-content">
-          <img src="@/assets/photo/对话.png" alt="chat" class="empty-icon" />
+          <svg class="empty-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="14" width="52" height="38" rx="8" stroke="#3f7af1" stroke-width="2.5" fill="none"/>
+            <path d="M22 44l-6 8v-8" stroke="#3f7af1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="36" cy="33" r="2.5" fill="#3f7af1"/>
+            <circle cx="44" cy="33" r="2.5" fill="#3f7af1"/>
+            <circle cx="52" cy="33" r="2.5" fill="#3f7af1"/>
+          </svg>
           <h2>开始对话吧</h2>
           <p>有什么想和我聊的吗？</p>
         </div>
@@ -396,9 +402,9 @@ const handleBack = async () => {
     text-align: center;
 
     .empty-icon {
-      width: 64px;
-      height: 64px;
-      opacity: 0.6;
+      width: 72px;
+      height: 72px;
+      opacity: 0.5;
       margin-bottom: 1.5rem;
     }
 
