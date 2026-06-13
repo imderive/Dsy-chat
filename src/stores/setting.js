@@ -7,6 +7,7 @@ export const useSettingStore = defineStore(
     const settings = ref({
       model: 'deepseek-ai/DeepSeek-R1',
       apiKey: '',
+      proxyUrl: '',
       stream: true,
       maxTokens: 4096,
       temperature: 0.7,

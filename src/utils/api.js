@@ -2,6 +2,15 @@ import { useSettingStore } from '@/stores/setting'
 
 const API_BASE_URL = 'https://api.siliconflow.cn/v1'
 
+const getBaseUrl = () => {
+  const settingStore = useSettingStore()
+  const proxyUrl = settingStore.settings.proxyUrl?.trim()
+  if (proxyUrl) {
+    return proxyUrl.replace(/\/+$/, '') + '/v1'
+  }
+  return API_BASE_URL
+}
+
 export const createChatCompletion = async (messages) => {
   const settingStore = useSettingStore()
   const payload = {
@@ -25,7 +34,7 @@ export const createChatCompletion = async (messages) => {
 
   try {
     const startTime = Date.now() // 记录开始时间
-    const response = await fetch(`${API_BASE_URL}/chat/completions`, options)
+    const response = await fetch(`${getBaseUrl()}/chat/completions`, options)
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
