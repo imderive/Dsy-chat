@@ -104,7 +104,7 @@ const handleNewChat = () => {
 }
 
 // 获取当前对话标题
-const currentTitle = computed(() => chatStore.currentConversation?.title || 'LLM Chat')
+const currentTitle = computed(() => chatStore.currentConversation?.title || 'dsy-chat')
 // 格式化标题
 const formatTitle = (title) => {
   return title.length > 4 ? title.slice(0, 4) + '...' : title

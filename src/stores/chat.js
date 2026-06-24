@@ -2,7 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useChatStore = defineStore(
-  'llm-chat',
+  'dsy-chat',
   () => {
     // 所有对话列表
     const conversations = ref([

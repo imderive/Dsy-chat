@@ -29,7 +29,7 @@ onUnmounted(() => {
   <div class="home-page">
     <!-- 头部 -->
     <header class="header">
-      <span class="logo">LLM Chat</span>
+      <span class="logo">dsy-chat</span>
     </header>
 
     <!-- 主体 -->
@@ -85,7 +85,7 @@ onUnmounted(() => {
 
     <!-- 页脚 -->
     <footer class="footer">
-      <span>LLM Chat</span>
+      <span>dsy-chat</span>
     </footer>
 
     <!-- 搜索对话框 -->

@@ -11,7 +11,7 @@ import Components from 'unplugin-vue-components/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/llmChat/',
+  base: '/Dsy-chat/',
   plugins: [
     vue(),
     vueDevTools(),

@@ -1,4 +1,4 @@
-# LLM Chat Box 2.0 Notes
+# dsy-chat Notes
 
 ## Project Snapshot
 
