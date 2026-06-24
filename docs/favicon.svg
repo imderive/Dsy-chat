@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- 圆角背景 -->
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#3f7af1"/>
+
+  <!-- 聊天气泡 -->
+  <path d="M18 20h20a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H31l-7 7v-7h-6a4 4 0 0 1-4-4V24a4 4 0 0 1 4-4z"
+        fill="#fff" opacity="0.95"/>
+
+  <!-- 气泡内的 AI 星形 -->
+  <circle cx="28" cy="31" r="2" fill="#3f7af1" opacity="0.7"/>
+  <circle cx="35" cy="31" r="2" fill="#3f7af1" opacity="0.9"/>
+  <circle cx="42" cy="31" r="2" fill="#3f7af1" opacity="0.7"/>
+</svg>
